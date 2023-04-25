@@ -1,6 +1,6 @@
 "use strict"
 
-interface StyledBlocksStyle {
+export interface StyledBlocksStyle {
     title: string
     key: string
     background: string
