@@ -73,6 +73,7 @@ export default class StyledBlocksTune {
         label.classList.add('ce-popover__item-label');
         label.style.display = 'inline-block';
         button.classList.add('ce-popover__item');
+        button.style.paddingBottom = '4px';
         button.appendChild(icon);
         button.setAttribute('data-styled-block-style', style.key)
         button.appendChild(label);
