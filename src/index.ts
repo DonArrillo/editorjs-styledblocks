@@ -11,6 +11,13 @@ interface IConfig {
     styles: StyledBlocksStyle[]
 }
 
+const defaultStyle: StyledBlocksStyle = {
+    title: '',
+    key: '',
+    background: '',
+    icon: '',
+}
+
 export default class StyledBlocksTune {
     data: string
     blockContent: any
@@ -35,7 +42,11 @@ export default class StyledBlocksTune {
         blockContent.style.backgroundColor = '';
         blockContent.style.paddingLeft = '';
         blockContent.querySelector('.styled-blocks-label')?.remove();
+
         if (this.data) {
+            if (!style) {
+                style = this.styles.find((s: StyledBlocksStyle) => s.key === this.data) || defaultStyle;
+            }
             const label = window.document.createElement('div');
             label.classList.add('styled-blocks-label');
             label.innerText = style.title;
@@ -88,18 +99,14 @@ export default class StyledBlocksTune {
         return button;
     }
 
+    // Render buttons for tune menu.
     public render(): HTMLElement {
         const self = this;
         const wrapper = window.document.createElement('div');
-        // let button;
         this.styles.forEach((style: StyledBlocksStyle) => {
             const button = self.addButton(style);
             wrapper.appendChild(button);
         });
-        // if (!button) {
-        //     button = this.addButton(this.styles[0]);
-        // }
-
         return wrapper;
     }
 }
