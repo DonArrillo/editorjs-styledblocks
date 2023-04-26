@@ -4,7 +4,7 @@ export interface StyledBlocksStyle {
     background: string;
     icon: string;
 }
-export declare class StyledBlocksTune {
+export default class StyledBlocksTune {
     data: string;
     blockContent: any;
     styles: StyledBlocksStyle[];

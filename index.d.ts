@@ -5,7 +5,7 @@ declare module 'editorjs-styledblocks' {
         background: string;
         icon: string;
     }
-    export class StyledBlocksTune {
+    export default class StyledBlocksTune {
         data: string;
         blockContent: any;
         styles: StyledBlocksStyle[];
