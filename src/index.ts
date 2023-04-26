@@ -55,7 +55,7 @@ export default class StyledBlocksTune {
             label.style.right = '24px';
             label.style.opacity = '0.5';
             label.style.fontSize = '0.7em';
-            blockContent.appendChild(label);
+            blockContent.prepend(label);
             blockContent.style.backgroundColor = style.background;
             blockContent.style.position = 'relative';
             blockContent.style.paddingLeft = '1em';
