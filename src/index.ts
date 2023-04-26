@@ -62,7 +62,7 @@ export default class StyledBlocksTune {
         const button = window.document.createElement('div');
         const icon = window.document.createElement('div');
         icon.classList.add('ce-popover__item-icon');
-        icon.style.float = 'left';
+        icon.style.display = 'inline-block';
         icon.style.marginRight = '8px';
         icon.style.clear = 'left';
         icon.innerHTML = style.icon;
@@ -71,6 +71,7 @@ export default class StyledBlocksTune {
         const label = window.document.createElement('div');
         label.innerText = style.title;
         label.classList.add('ce-popover__item-label');
+        label.style.display = 'inline-block';
         button.classList.add('ce-popover__item');
         button.appendChild(icon);
         button.setAttribute('data-styled-block-style', style.key)
