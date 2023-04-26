@@ -11,7 +11,7 @@ interface IConfig {
     styles: StyledBlocksStyle[]
 }
 
-export class StyledBlocksTune {
+export default class StyledBlocksTune {
     data: string
     blockContent: any
     styles: StyledBlocksStyle[]
@@ -22,7 +22,6 @@ export class StyledBlocksTune {
         }
         this.data = data;
         this.styles = [];
-        console.log('hest c', config)
         if (config && config.styles) {
             this.styles = config.styles;
         }
@@ -41,9 +40,10 @@ export class StyledBlocksTune {
             label.classList.add('styled-blocks-label');
             label.innerText = style.title;
             label.style.position = 'absolute';
-            label.style.top = '3px';
-            label.style.right = '3px';
+            label.style.top = '8px';
+            label.style.right = '24px';
             label.style.opacity = '0.5';
+            label.style.fontSize = '0.7em';
             blockContent.appendChild(label);
             blockContent.style.backgroundColor = style.background;
             blockContent.style.position = 'relative';
