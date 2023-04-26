@@ -59,10 +59,12 @@ export default class StyledBlocksTune {
     }
 
     protected addButton(style: StyledBlocksStyle): HTMLElement {
-        console.log('hest')
         const button = window.document.createElement('div');
         const icon = window.document.createElement('div');
         icon.classList.add('ce-popover__item-icon');
+        icon.style.float = 'left';
+        icon.style.marginRight = '8px';
+        icon.style.clear = 'left';
         icon.innerHTML = style.icon;
 
         // Create label
@@ -71,7 +73,7 @@ export default class StyledBlocksTune {
         label.classList.add('ce-popover__item-label');
         button.classList.add('ce-popover__item');
         button.appendChild(icon);
-        button.setAttribute('data-styled-block-style', this.data)
+        button.setAttribute('data-styled-block-style', style.key)
         button.appendChild(label);
         button.addEventListener('click', () => {
             if (style.key === this.data) {
